@@ -1,0 +1,18 @@
+api key: 
+6a281a676d346e22a675e6a473e71fc2
+
+api url:
+
+https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}
+
+
+fontawesome icons:
+
+<script src="https://kit.fontawesome.com/6ff3b27c94.js" crossorigin="anonymous"></script>
+
+
+fonts: 
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
