@@ -4,8 +4,9 @@ const weatherBox = document.querySelector(".weather-box");
 const weatherDetails = document.querySelector(".weather-details");
 const error404 = document.querySelector(".not-found");
 
+//getting all the ui elements at the top which are required
 
-search.addEventListener('click', () => {
+search.addEventListener('click', () => {                                        // adding event listener to the search icon
     const APIKey = "6a281a676d346e22a675e6a473e71fc2";
     const city = document.querySelector(".search-box input").value;
 
@@ -13,11 +14,9 @@ search.addEventListener('click', () => {
         return;
 
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`)
-        .then(
-            response => response.json()).then(
-                json => {
-                    if (json.cod === '404') {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`)          // this is for checking the api 
+        .then(response => response.json()).then(json => {                                           //first we are converting the api response to json then we are using the json to validate our needful response
+                    if (json.cod === '404') {                                                           //checking for status code inside api's json response..!
                         container.style.height = "400px";
                         weatherBox.style.display = "none";
                         weatherDetails.style.display = "none";
@@ -59,7 +58,7 @@ search.addEventListener('click', () => {
                             break;
                     }
 
-                    temperature.innerHTML = `${parseInt(json.main.temp)}<span>°C</span>`;
+                    temperature.innerHTML = `${parseInt(json.main.temp)}<span>°C</span>`;               //assiging our api response values to each of our html elements
                     description.innerHTML = `${json.weather[0].description}`;
                     Humidity.innerHTML = `${json.main.humidity}<span>%</span>`;
                     wind.innerHTML = `${parseInt(json.wind.speed)}<span>Km/h</span>`;
